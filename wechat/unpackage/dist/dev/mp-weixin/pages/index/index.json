@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "首页",
+  "usingComponents": {
+    "uni-tabs": "../../components/uni-tabs/uni-tabs",
+    "uni-section": "../../uni_modules/uni-section/components/uni-section/uni-section",
+    "uni-card": "../../uni_modules/uni-card/components/uni-card/uni-card"
+  }
+}

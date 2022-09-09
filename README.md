@@ -116,7 +116,11 @@ go run main
    - WX_APPID
 
    以上四个变量的值请按实际情况填写。如果使用云托管内MySQL，可以在控制台MySQL页面获取相关信息。
-
+## 阿里云镜像
+```
+go env -w GOPROXY=https://mirrors.aliyun.com/goproxy/ // Windows
+export GOPROXY=https://mirrors.aliyun.com/goproxy/ // macOS 或 Linux
+```
 ## License
 
 [MIT](./LICENSE)
