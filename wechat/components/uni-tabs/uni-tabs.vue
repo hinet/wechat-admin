@@ -1,26 +1,11 @@
 <template>
 	<view class="uni-tabs">
-		<view class="uni-tabs-item active">
-			<text class="u-text">全部</text>
+		<block v-for="(item,index) in options">
+		<view :class="'uni-tabs-item'+ (current==index ? ' active' : '')" @click="tabChanged(index)">
+			<text class="u-text">{{item.name}}</text>
 			<view class="indicator"></view>
 		</view>
-		<view class="uni-tabs-item">
-			<text class="u-text">待付款</text>
-			<view class="indicator"></view>
-		</view>
-		<view class="uni-tabs-item">
-			<text class="u-text">待认证</text>
-			<view class="indicator"></view>
-		</view>
-		<view class="uni-tabs-item">
-			<text class="u-text">异常</text>
-			<view class="indicator"></view>
-		</view>
-		
-		<view class="uni-tabs-item">
-			<text class="u-text">已完成</text>
-			<view class="indicator"></view>
-		</view>
+		</block>
 	</view>
 </template>
 
@@ -29,8 +14,20 @@
 		name:"uni-tabs",
 		data() {
 			return {
-				
+				options: [
+					{name:'全部'},
+					{name:'待付款'},
+					{name:'待认证'},
+					{name:'异常'},
+					{name:'已完成'},
+				],
+				current: 0
 			};
+		},
+		methods:{
+			tabChanged(index){
+				this.current = index;
+			}
 		}
 	}
 </script>

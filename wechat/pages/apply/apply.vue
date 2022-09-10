@@ -98,9 +98,9 @@
 			}
 		}
 		input{
-			line-height: 88rpx;
-			height: 88rpx;
-			min-height: 88rpx;
+			line-height: 72rpx;
+			height: 72rpx;
+			min-height: 72rpx;
 			border: 1px solid #e3e3e3;
 			border-radius: 10rpx;
 			background-color: #fff;

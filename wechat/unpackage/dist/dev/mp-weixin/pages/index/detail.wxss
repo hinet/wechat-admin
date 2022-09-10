@@ -23,21 +23,9 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-page {
-  background-color: #f3f3f3;
+.container .uni-section.data-v-5166ee27 {
+  border-bottom: 1px solid #ececec;
 }
-button[type=default] {
-  background-color: transparent !important;
+.container button.data-v-5166ee27 {
+  margin: 30rpx;
 }
-button[type=default]::after {
-  border: 1px solid rgba(0, 0, 0, 0.5);
-}
-button[type=success] {
-  color: #fff;
-  background-color: #00c250;
-}
-button[size=mini] {
-  padding: 0 15rpx !important;
-}
-
-/*每个页面公共css */page{--status-bar-height:25px;--top-window-height:0px;--window-top:0px;--window-bottom:0px;--window-left:0px;--window-right:0px;--window-magin:0px}[data-c-h="true"]{display: none !important;}

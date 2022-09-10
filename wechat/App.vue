@@ -18,6 +18,9 @@
 	}
 	button[type='default']{
 		background-color: transparent!important;
+		&::after{
+			border: 1px solid rgba(0, 0, 0, 0.5);
+		}
 	}
 	button[type='success']{
 		color: #fff;
