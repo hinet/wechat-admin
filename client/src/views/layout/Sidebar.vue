@@ -34,6 +34,6 @@ const routes = useRouter()
 const current = computed(() => store.state.menu.current)
 const onMenuChanged = (index: number) => {
   //保存当前菜单索引
-  store.dispatch('menu/current',index)
+  store.dispatch('menu/current', index)
 }
 </script>
