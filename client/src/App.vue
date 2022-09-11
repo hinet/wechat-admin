@@ -105,9 +105,6 @@ const onCollapsed = () => {
 
     .t-layout__content {
       padding: 15px;
-      .t-breadcrumb{
-        margin-bottom: 15px;
-      }
       .t-alert{
         margin-bottom: 15px;
       }
@@ -120,6 +117,10 @@ const onCollapsed = () => {
       color: rgba(0, 82, 217, .6);
       background: none !important;
     }
+  }
+  .t-dialog{
+    border: none;
+    border-radius: 4px;
   }
 }
 </style>

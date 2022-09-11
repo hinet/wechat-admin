@@ -1,15 +1,15 @@
 <template>
   <div class="container">
-    <t-breadcrumb>
-      <template #default>
-        <t-breadcrumbItem>控制台</t-breadcrumbItem>
-        <t-breadcrumbItem>首页</t-breadcrumbItem>
-      </template>
-      <template #separator> > </template>
-    </t-breadcrumb>
-    <t-alert message="欢迎体验基于微信第三方平台和微信云托管平台为基础搭建的“服务商微管家”SaaS应用。如有更多的需求或者使用问题可加入官方群进行反馈。" />
-    <t-card :bordered="false" style="padding-top:12px">
-      <t-space direction="vertical">
+    <t-space direction="vertical">
+      <t-breadcrumb>
+        <template #default>
+          <t-breadcrumbItem>控制台</t-breadcrumbItem>
+          <t-breadcrumbItem>首页</t-breadcrumbItem>
+        </template>
+        <template #separator> > </template>
+      </t-breadcrumb>
+      <t-alert message="欢迎体验基于微信第三方平台和微信云托管平台为基础搭建的“服务商微管家”SaaS应用。如有更多的需求或者使用问题可加入官方群进行反馈。" />
+      <t-card :bordered="false" style="padding-top:12px">
         <t-row :gutter="15">
           <t-col :span="8">
             <t-card title="产品体验指引">
@@ -96,8 +96,8 @@
             </t-col>
           </t-row>
         </t-card>
-      </t-space>
-    </t-card>
+      </t-card>
+    </t-space>
   </div>
 </template>
 <script setup lang="ts">
@@ -105,9 +105,14 @@
 </script>
 <style lang="less" scoped>
 .container {
-  margin: 0 auto;
-  max-width: 1170px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
+  .t-space {
+    margin: 0 auto;
+    max-width: 1080px;
+  }
   .panel {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -122,7 +127,6 @@
 
     .panel-body {
       padding-left: 12px;
-
       .title {
         font-weight: bold;
       }
