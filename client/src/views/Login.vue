@@ -11,7 +11,7 @@
                 </t-form-item>
                 <t-form-item labelAlign="right" labelWidth="0">
                     <a href="http://" @click="showTips">忘记帐号或密码</a>
-                    <t-button theme="primary" type="submit" size="large">登录</t-button>
+                    <t-button theme="primary" type="submit" size="large" :loading="loading">{{loginText}}</t-button>
                 </t-form-item>
             </t-form>
         </div>
@@ -30,6 +30,8 @@ import { MessagePlugin } from 'tdesign-vue-next';
 
 const store = useStore()
 const visible = ref(false)
+const loading = ref(false)
+const loginText = ref("登录")
 const formData = ref({
     username: '',
     password: '',
@@ -44,15 +46,22 @@ const showTips = (e: any) => {
 const onSubmit = ({ validateResult, firstError, e }) => {
     e.preventDefault();
     if (validateResult === true) {
-        api.login(formData.value).then((res:any)=>{
-            if(res.code == 0){
-                store.commit("User/login",res.data)
+        loading.value = true;
+        loginText.value = "登录中";
+        api.login(formData.value).then((res: any) => {
+            loading.value = false;
+            loginText.value = "登录";
+            if (res.code == 0) {
+                store.commit("User/login", res.data)
                 MessagePlugin.success('提交成功');
-            }else{
+            } else {
 
             }
+        }).catch(err => {
+            loginText.value = "登录";
+            loading.value = false;
         })
-        
+
     } else {
         console.log('Validate Errors: ', firstError, validateResult);
         MessagePlugin.error(firstError);
