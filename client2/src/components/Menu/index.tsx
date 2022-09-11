@@ -1,10 +1,10 @@
-import {useEffect, useState} from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { FullscreenExitIcon, FullscreenIcon } from 'tdesign-icons-react'
 import { Menu } from 'tdesign-react/'
-import {routes} from "../../config/route";
+import { routes } from "../../config/route";
 
-const {SubMenu, MenuItem} = Menu;
+const { SubMenu, MenuItem } = Menu;
 
 interface IProps {
     menuList: {
@@ -21,7 +21,7 @@ interface IProps {
 
 export default function MyMenu(props: IProps) {
 
-    const {menuList} = props
+    const { menuList } = props
 
     const [activePath, setActivePath] = useState<string | number>('')
     const [expandsMenu, setExpandsMenu] = useState<Array<string | number>>([])
@@ -58,9 +58,9 @@ export default function MyMenu(props: IProps) {
             expanded={expandsMenu}
             onExpand={(values) => setExpandsMenu(values)}
             onChange={changePath}
-            style={{height: '100%'}}
+            style={{ height: '100%' }}
             operations={collapsed ? <FullscreenIcon className="t-menu__operations-icon" onClick={() => setCollapsed(!collapsed)} /> : <FullscreenExitIcon className="t-menu__operations-icon" onClick={() => setCollapsed(!collapsed)} />}
-            logo={<h3 style={{margin: '0 auto', color: 'white'}}>{collapsed ? '' : '服务商微管家'}</h3>}
+            logo={<h3 style={{ margin: '0 auto', color: 'white' }}>{collapsed ? '' : '服务商微管家'}</h3>}
         >
             {
                 (menuList || []).map((i, index) => {

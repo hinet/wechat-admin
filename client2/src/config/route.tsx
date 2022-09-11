@@ -23,6 +23,11 @@ export const routes: IRoute = {
         path: '/home',
         element: <Home />,
     },
+    register: {
+        label: '小程序注册',
+        path: '/authorizedAccountManage',
+        element: <AuthorizedAccountManage />
+    },
     authorizedAccountManage: {
         label: '授权帐号管理',
         path: '/authorizedAccountManage',
