@@ -1,6 +1,6 @@
 <template>
   <t-menu theme="dark" :collapsed="collapsed" :width="['200px', '60px']" @change="onMenuChanged" :value="current">
-    <template v-for="(item,index) in routes.options.routes">
+    <template v-for="(item,index) in routes.options.routes[1].children">
       <t-submenu :value="index" :title="item.meta.title" v-if="item.children">
         <template #icon>
           <t-icon :name="item.meta.icon" />
